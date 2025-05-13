@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+.section-style{
+    @apply min-h-[42vh] m-auto bg-[#8DD8FF] w-[80vw] my-[2.65vh] p-4 rounded-2xl shadow-2xl flex 
+}
+
+.button-style{
+    @apply px-5 py-2 rounded-lg text-lg font-bold transition duration-300 hover:scale-105
+}
+
+.card-style {
+    @apply flex justify-center items-center flex-col p-6 bg-[#5409DA] text-[#8DD8FF] rounded-2xl shadow-2xl m-5 transform duration-700 hover:scale-105 gap-3 text-base
+}
