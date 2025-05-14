@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="output.css" />
   </head>
   <body
-    class="bg-[#BBFBFF] text-[#5409DA] bg-gradient-to-b from-[#5409DA] to-[#BBFBFF] font-mono"
+    class="bg-[#BBFBFF] text-[#5409DA] bg-gradient-to-b from-[#5409DA] to-[#BBFBFF] font-mono min-h-screen"
   >
     <!-- header section  -->
     <header
@@ -20,13 +20,17 @@
       <!-- input field section -->
       <div class="flex justify-center items-center flex-col w-[45vw]">
         <h2 class="text-xl mb-4">Enter a City Name</h2>
+
+        <!-- input for your city name -->
         <input
           type="text"
-          name=""
+          name="city-input"
           class="px-5 py-3 border-2 rounded-lg w-80 bg-[#BBFBFF] outline-none text-lg mb-4"
           placeholder="eg. New York, London"
           id="city-input"
         />
+
+        <!-- search button for input city -->
         <button
           type="button"
           id="search-button"
@@ -34,8 +38,17 @@
         >
           Search
         </button>
-        <p class="my-2 flex justify-center items-center gap-2"><span class="h-1 w-20 bg-[#4E71FF]"></span><span>or</span><span class="h-1 w-20 bg-[#4E71FF]"></span></p>
-        <button type="button" class="button-style bg-[#BBFBFF] text-[#4E71FF]">
+        <p class="my-2 flex justify-center items-center gap-2">
+          <span class="h-1 w-20 bg-[#4E71FF]"></span><span>or</span
+          ><span class="h-1 w-20 bg-[#4E71FF]"></span>
+        </p>
+
+        <!-- button for accessing current location  -->
+        <button
+          type="button"
+          id="current-location"
+          class="button-style bg-[#BBFBFF] text-[#4E71FF]"
+        >
           Use Current Location
         </button>
       </div>
@@ -44,64 +57,45 @@
       <div class="w-1 h-[40vh] bg-[#BBFBFF] rounded-4xl mx-10"></div>
       <div>
         <!-- current location report card -->
-        <div class="bg-[#4E71FF] text-[#BBFBFF] text-base italic w-[35vw] flex justify-between m-7 py-5 px-10 rounded-lg shadow-xl items-center border-2 border-[#BBFBFF] h-80 transform duration-700 hover:scale-105">
-            <div>
+        <div
+          class="bg-[#4E71FF] text-[#BBFBFF] text-base italic w-[35vw] flex justify-between m-7 py-5 px-10 rounded-lg shadow-xl items-center border-2 border-[#BBFBFF] h-80 transform duration-700 hover:scale-105"
+        >
+          <div>
+            <!-- weather details about the current location -->
+            <h2 class="text-2xl font-extrabold" id="city-name">
+              City-Name (----/--/--)
+            </h2>
+            <p id="temperature">Temperature: --°C</p>
+            <p id="wind-speed">Wind: --km/h</p>
+            <p id="humidity">Humidity:--%</p>
+          </div>
 
-                <h2 class="text-2xl font-extrabold">London (2024-04-23)</h2>
-                <p>Temperature: 23.C</p>
-                <p>Wind:120km/h</p>
-                <p>Humidity:30%</p>
-            </div>
-
-            <div>
-                <img src="./cloudy.svg" alt="image of current weather" class="w-48">
-                <p class="text-center">Light rain</p>
-            </div>
+          <div class="flex items-center justify-center flex-col w-44">
+            <img
+              src="./cloudy.svg"
+              alt="image of current weather"
+              class="w-40 text-center"
+              id="weather-status-img"
+            />
+            <p class="text-center font-extrabold text-lg" id="weather-status">Light rain</p>
+            <p class="text-center" id="weather-summary" class='wrap-anywhere'>Weather Summary</p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- section to present data about the weather on a perticular location -->
     <section class="section-style flex-col justify-start">
-        <h2 class=" mx-6 text-3xl my-5 font-extrabold">5-day forecast</h2>
-        <div class="grid grid-cols-5 items-center m-2">
-            <div class="card-style">
-                <h3 class="text-lg font-extrabold">(2024-03-23)</h3>
-                <img src="./cloudy.svg" alt="" class="w-48">
-                <p>Temperature: 23.C</p>
-                <p>Wind:120km/h</p>
-                <p>Humidity:30%</p>
-            </div>
-            <div class="card-style">
-                <h3 class="text-lg font-extrabold">(2024-03-23)</h3>
-                <img src="./cloudy.svg" alt="" class="w-48">
-                <p>Temperature: 23.C</p>
-                <p>Wind:120km/h</p>
-                <p>Humidity:30%</p>
-            </div>
-            <div class="card-style">
-                <h3 class="text-lg font-extrabold">(2024-03-23)</h3>
-                <img src="./cloudy.svg" alt="" class="w-48">
-                <p>Temperature: 23.C</p>
-                <p>Wind:120km/h</p>
-                <p>Humidity:30%</p>
-            </div>
-            <div class="card-style">
-                <h3 class="text-lg font-extrabold">(2024-03-23)</h3>
-                <img src="./cloudy.svg" alt="" class="w-48">
-                <p>Temperature: 23.C</p>
-                <p>Wind:120km/h</p>
-                <p>Humidity:30%</p>
-            </div>
-            <div class="card-style">
-                <h3 class="text-lg font-extrabold">(2024-03-23)</h3>
-                <img src="./cloudy.svg" alt="" class="w-48">
-                <p>Temperature: 23.C</p>
-                <p>Wind:120km/h</p>
-                <p>Humidity:30%</p>
-            </div>
-           
+      <h2 class="mx-6 text-3xl my-5 font-extrabold">5-day forecast</h2>
+      <div id="weekly-cards" class="grid grid-cols-5 items-center m-2">
+        <div class="card-style">
+          <h3 class="text-lg font-extrabold">(2024-03-23)</h3>
+          <img src="./cloudy.svg" alt="" class="w-48" />
+          <p>Temperature: 23.C</p>
+          <p>Wind:120km/h</p>
+          <p>Humidity:30%</p>
         </div>
+      </div>
     </section>
     <script src="script.js"></script>
   </body>
