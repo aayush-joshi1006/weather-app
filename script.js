@@ -259,18 +259,19 @@ document.addEventListener("DOMContentLoaded", async function () {
         // for image
         let weatherStatusValue = currentDate.weather[0].id;
 
-        div.innerHTML = `<h3 class="text-lg font-extrabold">(${date.getFullYear()}-${
+        div.innerHTML = `<h3 class="text-base font-extrabold">(${date.getFullYear()}-${
           date.getMonth() + 1
         }-${date.getDate()})</h3>
             <img src=./animated/${setWeatherStatusImage(
               weatherStatusValue
-            )}.svg alt="${currentDate.weather[0].description}" class="w-48" />
-            <p>Temperature: ${(tempInK - 273.15).toFixed(2)}°C/${(
-          1.8 * (tempInK - 273.15) +
-          32
-        ).toFixed(2)}°F</p>
-            <p>Wind Speed: ${currentDate.wind_speed} m/s</p>
-            <p>Humidity: ${currentDate.humidity}%</p>`;
+            )}.svg alt="${
+          currentDate.weather[0].description
+        }" class="w-48 xl:block hidden" />
+        <p class='text-center'>Temperature: ${(tempInK - 273.15).toFixed(
+          2
+        )}°C/${(1.8 * (tempInK - 273.15) + 32).toFixed(2)}°F</p>
+        <p class='text-center'>Wind Speed: ${currentDate.wind_speed} m/s</p>
+        <p class='text-center'>Humidity: ${currentDate.humidity}%</p>`;
 
         weeklyCardContainer.appendChild(div);
       }

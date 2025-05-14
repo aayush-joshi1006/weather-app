@@ -5,9 +5,9 @@
 }
 
 .button-style{
-    @apply px-5 py-2 rounded-lg text-lg font-bold transition duration-300 hover:scale-105
+    @apply px-5 py-2 rounded-lg text-base font-bold transition duration-300 hover:scale-105
 }
 
 .card-style {
-    @apply flex justify-center items-center flex-col p-6 bg-[#5409DA] text-[#8DD8FF] rounded-2xl shadow-2xl m-5 transform duration-700 hover:scale-105 gap-3 text-base
+    @apply flex justify-center items-center flex-col xl:p-6 p-2 bg-[#5409DA] text-[#8DD8FF] rounded-2xl shadow-2xl xl:m-5 m-2 transform duration-700 hover:scale-105 xl:gap-3 gap-1.5 xl:text-base text-sm 
 }

@@ -4,18 +4,18 @@ A simple and responsive weather application built using HTML, CSS, and JavaScrip
 
 ## Features
 
-* Search for weather in any city
-* Real-time weather updates
-* Displays temperature, weather description, and forecast of upto 5 days
-* Clean and responsive UI
-* Weather images based on current conditions
+- Search for weather in any city
+- Real-time weather updates
+- Displays temperature, weather description, and forecast of upto 5 days
+- Clean and responsive UI
+- Weather images based on current conditions
 
 ## Technologies Used
 
-* HTML5  
-* CSS3  
-* JavaScript (Vanilla JS)  
-* [OpenWeatherMao Api](https://openweathermap.org/api/one-call-3)
+- HTML5
+- CSS3
+- JavaScript (Vanilla JS)
+- [OpenWeatherMap Api](https://openweathermap.org/api/one-call-3)
 
 ## Getting Started
 
@@ -23,24 +23,23 @@ Follow these instructions to run the project locally:
 
 1. Clone the repository:-
 
-    ```bash
-    git clone https://github.com/aayush-joshi1006/weather-app
-    cd Web-Projects/weather_app
-    ```
+   ```bash
+   git clone https://github.com/aayush-joshi1006/weather-app
+   ```
 
 2. Add Your API Key:-
 
-    Replace "api_key" in the script.js file with your actual Free Weather Api key.
+   Replace "api_key" in the script.js file with your actual Free Weather Api key.
 
-    ```bash
-    const api_key = "YOUR_API_KEY";
-    ```
+   ```bash
+   const api_key = "YOUR_API_KEY";
+   ```
 
-    You can get a free API key from [OpenWeatherMao Api](https://openweathermap.org/api/one-call-3).
+   You can get a free API key from [OpenWeatherMao Api](https://openweathermap.org/api/one-call-3).
 
 3. Open in Browser:-
 
-    Simply open index.html in your preferred browser.
+   Simply open index.html in your preferred browser.
 
 ## Folder Structure
 

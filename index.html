@@ -3,15 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Weather Application</title>
+    <link rel="shortcut icon" href="./animated/icon.svg" type="image/svg">
     <link rel="stylesheet" href="output.css" />
   </head>
   <body
-    class="bg-[#BBFBFF] text-[#5409DA] bg-gradient-to-b from-[#5409DA] to-[#BBFBFF] font-mono min-h-screen"
+    class="bg-[#BBFBFF] text-[#5409DA] bg-gradient-to-b from-[#5409DA] to-[#BBFBFF] font-mono min-h-screen transition-all duration-500 scroll-smooth"
   >
     <!-- header section  -->
     <header
-      class="text-center bg-[#5409DA] text-[#BBFBFF] text-3xl font-extrabold min-h-[4vh] flex justify-center items-center relative"
+      class="text-center bg-[#5409DA] text-[#BBFBFF] text-2xl font-extrabold min-h-[4vh] flex justify-center items-center relative"
     >
       <h2>Weather Dashboard</h2>
 
@@ -42,10 +43,10 @@
       </button>
     </header>
     <!-- section for taking input on the location -->
-    <section class="section-style justify-center items-center">
+    <section class="section-style justify-center items-center flex-col xl:flex-row">
       <!-- input field section -->
       <div class="flex justify-center items-center flex-col w-[45vw]">
-        <h2 class="text-xl mb-4">Enter a City Name</h2>
+        <h2 class="text-lg mb-4">Enter a City Name</h2>
 
         <!-- input for your city name -->
         <div class="relative">
@@ -55,7 +56,7 @@
             name="city-input"
             id="city-input"
             placeholder="eg. New York, London"
-            class="px-5 py-3 border-2 rounded-lg w-80 bg-[#BBFBFF] outline-none text-lg mb-4"
+            class="px-5 py-3 border-2 rounded-lg w-80 bg-[#BBFBFF] outline-none text-base mb-4"
           />
 
           <!-- Dropdown for recent cities -->
@@ -95,15 +96,15 @@
       </div>
 
       <!-- section divider line -->
-      <div class="w-1 h-[40vh] bg-[#BBFBFF] rounded-4xl mx-10"></div>
-      <div>
+      <div class="w-1 h-[40vh] xl:block hidden  bg-[#BBFBFF] rounded-4xl mx-10"></div>
+      <div class="w-full flex justify-center items-center">
         <!-- current location report card -->
         <div
-          class="bg-[#4E71FF] text-[#BBFBFF] text-base italic w-[35vw] flex justify-between m-7 py-5 px-10 rounded-lg shadow-xl items-center border-2 border-[#BBFBFF] h-80 transform duration-700 hover:scale-105"
+          class="bg-[#4E71FF] text-[#BBFBFF] text-base italic xl:w-[35vw] w-[75vw] mt-4 flex justify-between xl:m-7 m-3 py-5 xl:px-10  px-4 rounded-lg shadow-xl items-center border-2 border-[#BBFBFF] h-80 transform duration-700 hover:scale-105"
         >
           <div>
             <!-- weather details about the current location -->
-            <h2 class="text-2xl font-extrabold" id="city-name">
+            <h2 class="text-xl font-extrabold" id="city-name">
               City-Name (----/--/--)
             </h2>
             <p id="temperature">Temperature: --°C</p>
@@ -118,10 +119,10 @@
               class="w-40 text-center"
               id="weather-status-img"
             />
-            <p class="text-center font-extrabold text-lg" id="weather-status">
+            <p class="text-center font-extrabold text-base" id="weather-status">
               Light rain
             </p>
-            <p class="text-center" id="weather-summary" class="wrap-anywhere">
+            <p class="text-center xl:block hidden text-sm" id="weather-summary" class="wrap-anywhere">
               Weather Summary
             </p>
           </div>
@@ -132,15 +133,9 @@
     <!-- section to present data about the weather on a perticular location -->
     <section class="section-style flex-col justify-start">
       <h2 class="mx-6 text-3xl my-5 font-extrabold">5-day forecast</h2>
-      <div id="weekly-cards" class="grid grid-cols-5 items-center m-2">
+      <div id="weekly-cards" class="grid xl:grid-cols-5 grid-cols-2 items-center m-2">
         <!-- dynamic cards will appear here -->
-        <!-- <div class="card-style">
-          <h3 class="text-lg font-extrabold">(2024-03-23)</h3>
-          <img src="./cloudy.svg" alt="" class="w-48" />
-          <p>Temperature: 23.C</p>
-          <p>Wind:120km/h</p>
-          <p>Humidity:30%</p>
-        </div> -->
+        
       </div>
     </section>
     <script src="script.js"></script>
