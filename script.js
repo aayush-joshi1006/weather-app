@@ -1,3 +1,4 @@
+//event listener for requesting current location of the user
 document.addEventListener("DOMContentLoaded", async function () {
   // input field and button for input location and error text
   let cityInput = document.getElementById("city-input");
@@ -122,7 +123,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     // api call for getting latitude and longitude for city
     try {
       let locationData = await fetch(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${api_key}`
+        `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${api_key}`
       );
       let coordinates = await locationData.json();
       let lat = coordinates[0].lat;
@@ -184,20 +185,20 @@ document.addEventListener("DOMContentLoaded", async function () {
   function setWeatherStatusImage(status) {
     let fileName = "";
 
-    if (status === 800) {
-      fileName = "clearSky";
-    } else if (status > 800) {
+    if (status > 800) {
       fileName = "scatteredClouds";
-    } else if (status >= 200 && status < 300) {
-      fileName = "thunderstorm";
-    } else if (status >= 300 && status < 311) {
-      fileName = "showerRain";
-    } else if (status >= 311 && status < 400) {
-      fileName = "rain";
-    } else if (status >= 600 && status < 700) {
-      fileName = "snow";
+    } else if (status === 800) {
+      fileName = "clearSky";
     } else if (status >= 700 && status < 800) {
       fileName = "scatteredClouds";
+    } else if (status >= 600 && status < 700) {
+      fileName = "snow";
+    } else if (status >= 500 && status < 600) {
+      fileName = "rain";
+    } else if (status >= 300 && status < 400) {
+      fileName = "showerRain";
+    } else if (status >= 200 && status < 300) {
+      fileName = "thunderstorm";
     } else {
       fileName = "clearSky";
     }
@@ -301,7 +302,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     try {
       let getCurrentCity = await fetch(
-        `http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&appid=${api_key}`
+        `https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&appid=${api_key}`
       );
       let currentCity = await getCurrentCity.json();
       let cityName = currentCity[0].name.toLowerCase().trim();
